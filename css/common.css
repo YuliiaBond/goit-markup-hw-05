@@ -18,6 +18,8 @@ html {
   --porfolio-card-color: #eeeeee;
   --hero-color: rgba(47, 48, 58, 0.4);
   --social-color: #afb1b8;
+
+  --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 body {
   color: var(--primary-text-color);
@@ -101,8 +103,23 @@ p {
   color: var(--accent-color);
 }
 .site-nav .link.current {
+  position: relative;
   color: var(--accent-color);
 }
+.site-nav .current::after {
+  content: "";
+
+  position: absolute;
+  left: 0;
+  bottom: 0;
+
+  display: block;
+  width: 100%;
+  height: 4px;
+  background-color: var(--accent-color);
+  border-radius: 2px;
+}
+
 .auth-nav {
   display: flex;
   margin-left: auto;
