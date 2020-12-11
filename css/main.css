@@ -116,9 +116,10 @@
 }
 .workes-box {
   position: relative;
+  display: flex;
 }
 .workes-text {
-  display: flex;
+  display: inline-flex;
   padding-top: 27px;
   padding-bottom: 27px;
   width: 100%;
