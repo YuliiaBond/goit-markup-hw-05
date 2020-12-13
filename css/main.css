@@ -45,6 +45,7 @@
   letter-spacing: 0.06em;
   border-radius: 4px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
 }
 /*Section*/
 .section-title {
@@ -206,6 +207,8 @@
 .social-link:focus .linkedin {
   color: var(--accent-color);
   fill: var(--primary-bg-color);
+  transition: color 250ms var(--timing-function),
+    fill 250ms var(--timing-function);
 }
 
 /* Постоянные клиенты */
@@ -257,6 +260,7 @@
 .client-link:hover,
 .client-link:focus {
   border: 1px solid var(--accent-color);
+  transition: color 250ms var(--timing-function);
 }
 .client-link:hover .logo-1,
 .client-link:hover .logo-2,
@@ -273,6 +277,9 @@
   --color2: var(--accent-color);
   --color4: var(--accent-color);
   fill: var(--accent-color);
+  transition: var(--color2) 250ms var(--timing-function),
+    var(--color4) 250ms var(--timing-function),
+    fill 250ms var(--timing-function);
 }
 /* Модальное окно */
 .backdrop {
@@ -282,14 +289,36 @@
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.2);
+
+  opacity: 1;
+  transition: opacity 250ms var(--timing-function);
+}
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(0.9);
 }
 .modal {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform 250ms var(--timing-function);
 
-  width: 528px;
-  height: 581px;
+  min-width: 528px;
+  min-height: 581px;
   background-color: var(--primary-bg-color);
+}
+.btn-modal {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 30px;
+  height: 30px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  background-color: var(--primary-bg-color);
+  cursor: pointer;
 }
