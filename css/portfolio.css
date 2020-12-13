@@ -56,7 +56,8 @@
   display: block;
   width: 100%;
 }
-.project-link:hover .project-overlay {
+.project-link:hover .project-overlay,
+.project-link:focus .project-overlay {
   opacity: 1;
 }
 .project-thumb {
@@ -64,7 +65,8 @@
   overflow: hidden;
   display: flex;
 }
-.project-thumb:hover::before {
+.project-thumb:hover::before,
+.project-thumb:focus::before {
   opacity: 1;
 }
 .project-overlay {
@@ -82,7 +84,8 @@
   transition: transform 250ms var(--timing-function),
     opacity 250ms var(--timing-function);
 }
-.project-link:hover .project-overlay {
+.project-link:hover .project-overlay,
+.project-link:focus .project-overlay {
   transform: translateY(0);
   opacity: 1;
 }
@@ -136,6 +139,7 @@ section {
   letter-spacing: 0.03em;
   color: var(--primary-bg-color);
 }
-.project-link:hover .description-text {
+.project-link:hover .description-text,
+.project-link:focus .description-text {
   opacity: 1;
 }
